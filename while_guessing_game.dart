@@ -21,8 +21,25 @@ void main() {
 
   int randomNumber = Random().nextInt(11);
 
-  print("Random number generated. What's it?!");
-  print("Response:");
-  String response = stdin.readLineSync(); // Read user input
-  print(response);
+  bool guessedRight = false;
+
+  do {
+    print("\nRandom number generated. What's it?!");
+    
+    print("Response:");
+    String? response =
+        stdin.readLineSync()!; // Read user input as a nullable string
+    int enteredNumber = int.parse(response); // Read user input
+    //print("You entered ${enteredNumber ?? "No input"}");
+
+    if (enteredNumber == randomNumber) {
+      print("\nCongratulations! You guessed right");
+
+      guessedRight = true; // change the condition state to true to exit loop
+    } else if (enteredNumber > randomNumber) {
+      print("\nToo high! Guess again.");
+    } else {
+      print("\nToo low! Guess again.");
+    }
+  } while (guessedRight != true);
 }
