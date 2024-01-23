@@ -23,9 +23,14 @@ void main() {
 
   bool guessedRight = false;
 
+  // we'll use this to track the user's tries
+  int tries = 0;
+
   do {
+    tries++;  // increment the attempts counter
+
     print("\nRandom number generated. What's it?!");
-    
+
     print("Response:");
     String? response =
         stdin.readLineSync()!; // Read user input as a nullable string
@@ -33,7 +38,7 @@ void main() {
     //print("You entered ${enteredNumber ?? "No input"}");
 
     if (enteredNumber == randomNumber) {
-      print("\nCongratulations! You guessed right");
+      print("\nCongratulations! You guessed right in $tries attempts");
 
       guessedRight = true; // change the condition state to true to exit loop
     } else if (enteredNumber > randomNumber) {
