@@ -1,6 +1,10 @@
 void main() {
-  // Lists are basically like arrays in JS or Python
-  // They're an ordered list of values
+  /*
+  * LISTS
+  * Lists are basically like arrays in JS or Python
+  * They're an ordered list of values
+  * They use []
+  */
 
   // Here's a list of EIT names
   var names = ['Courtney', 'Francois', 'Roy', 'Navi'];
@@ -40,4 +44,21 @@ void main() {
   // We can also shuffle the list
   names.shuffle();
   print("Updated Names list: ${names}");
+
+  /*
+  * SET
+  * Sets are unordered and they don't allow for duplicate values
+  * They use {}
+  */
+
+  // Here's a set of West African Francophone countries
+  Set<String> countries = {"Togo", "Mali", "Burkina Faso", "Niger"};
+  print("\nWest African Francophone countries: ${countries}");
+
+  // We can see the count of items in the set
+  print("Total Countries: ${countries.length}");
+
+  // We can also add new values to predefined set
+  countries.add("Cote D'Ivoire");
+  print("Updated Countries: ${countries}");
 }
