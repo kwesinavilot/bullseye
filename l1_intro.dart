@@ -1,4 +1,6 @@
 // The main function is the entry point of the application
+import 'dart:js_util';
+
 void main() {
   // print() is the usual default method for printing things out, especially to the console
   print("Hello World");
@@ -24,7 +26,18 @@ void main() {
   double netWorth = 16758890.78;
   int relatives = 6;
 
-  print("I live in $country, have $relatives relatives and I'm worth USD $netWorth");
+  print(
+      "I live in $country, have $relatives relatives and I'm worth USD $netWorth");
 
-  
+  // you can also use final or const before the type annotation
+  final bool isFemale = false;
+
+  // we can use Dart's null safety measures to declare variables without
+  // their actual value. This is very handy for when you know the data type
+  // expected but don't have the value yet.
+  // To do this, we put a '?' after the type annotation
+  String? productName;
+  double? price;
+  double? weight;
+  int? quantity;
 }
